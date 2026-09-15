@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>هيرو رواج | منصة المهام المصغرة</title>
-  <meta name="description" content="اختبر منتجك مع مستخدمين حقيقيين في الشرق الأوسط. اختبارات حقيقية. نتائج موثقة. بدون تعقيد." />
+  <title>هيرو رواج | Hero Rawaj</title>
+  <meta name="description" content="اختبر منتجك مع مستخدمين حقيقيين في الشرق الأوسط. Test your product with real users in the Middle East." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -22,38 +22,28 @@
       --success: #10b981;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Cairo', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
+      transition: direction 0.2s ease;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
-    .container {
-      width: min(1120px, 92%);
-      margin: 0 auto;
-    }
+    .container { width: min(1120px, 92%); margin: 0 auto; }
 
+    /* ============ HEADER ============ */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
@@ -64,6 +54,7 @@
       justify-content: space-between;
       gap: 1rem;
       padding: 0.9rem 0;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -99,10 +90,47 @@
       font-size: 0.95rem;
     }
 
-    .nav-links a:hover {
-      color: var(--primary);
+    .nav-links a:hover { color: var(--primary); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      flex-wrap: wrap;
     }
 
+    /* Language toggle */
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.35rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .lang-toggle button {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.7rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .lang-toggle button.active {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+    }
+
+    /* ============ BUTTONS ============ */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -114,6 +142,8 @@
       transition: 0.2s ease;
       border: 1px solid transparent;
       cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
     }
 
     .btn-primary {
@@ -138,11 +168,20 @@
       color: var(--primary);
     }
 
-    .btn-small {
-      padding: 0.65rem 1rem;
-      font-size: 0.9rem;
+    .btn-small { padding: 0.65rem 1rem; font-size: 0.9rem; }
+
+    .email-link {
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      direction: ltr;
+      display: inline-block;
+      font-size: 0.95rem;
     }
 
+    .email-link:hover { text-decoration: underline; }
+
+    /* ============ HERO ============ */
     .hero {
       padding: 5rem 0 4rem;
       background:
@@ -182,15 +221,13 @@
       margin-bottom: 0.8rem;
     }
 
-    .hero p {
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
+    .hero p { color: var(--muted); font-size: 1.05rem; }
 
     .hero-actions {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+      align-items: center;
       margin: 2rem 0 1.5rem;
     }
 
@@ -211,10 +248,7 @@
       box-shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
     }
 
-    .card-stack {
-      display: grid;
-      gap: 0.8rem;
-    }
+    .card-stack { display: grid; gap: 0.8rem; }
 
     .mini-card {
       display: flex;
@@ -237,19 +271,11 @@
       font-weight: 800;
     }
 
-    .mini-card strong {
-      display: block;
-      margin-bottom: 0.15rem;
-    }
+    .mini-card strong { display: block; margin-bottom: 0.15rem; }
+    .mini-card p { font-size: 0.9rem; color: var(--muted); }
 
-    .mini-card p {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .section {
-      padding: 4.5rem 0;
-    }
+    /* ============ SECTIONS ============ */
+    .section { padding: 4.5rem 0; }
 
     .section-alt {
       background: #fff;
@@ -259,7 +285,7 @@
 
     .section-head {
       text-align: center;
-      max-width: 700px;
+      max-width: 760px;
       margin: 0 auto 2.5rem;
     }
 
@@ -268,9 +294,7 @@
       margin-bottom: 0.6rem;
     }
 
-    .section-head p {
-      color: var(--muted);
-    }
+    .section-head p { color: var(--muted); }
 
     .cards {
       display: grid;
@@ -286,10 +310,7 @@
       box-shadow: 0 12px 35px rgba(15, 23, 42, 0.05);
     }
 
-    .card h3 {
-      margin-bottom: 0.8rem;
-      font-size: 1.25rem;
-    }
+    .card h3 { margin-bottom: 0.8rem; font-size: 1.25rem; }
 
     .card ul {
       list-style: none;
@@ -330,15 +351,8 @@
       margin-bottom: 1rem;
     }
 
-    .step h3 {
-      font-size: 1.05rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .step p {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+    .step h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+    .step p { color: var(--muted); font-size: 0.9rem; }
 
     .two-col {
       display: grid;
@@ -355,9 +369,7 @@
       box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
     }
 
-    .requirements-card h3 {
-      margin-bottom: 1rem;
-    }
+    .requirements-card h3 { margin-bottom: 1rem; }
 
     .check-list {
       list-style: none;
@@ -374,6 +386,7 @@
       margin-inline-end: 0.5rem;
     }
 
+    /* ============ CTA ============ */
     .cta {
       padding: 5rem 0;
       background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--accent));
@@ -387,9 +400,9 @@
     }
 
     .cta p {
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto 1.5rem;
-      color: rgba(255, 255, 255, 0.88);
+      color: rgba(255, 255, 255, 0.9);
     }
 
     .cta .btn {
@@ -398,6 +411,17 @@
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
     }
 
+    .cta .email-link { color: #fff; }
+
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ============ FOOTER ============ */
     footer {
       padding: 2rem 0;
       background: #0f172a;
@@ -406,109 +430,106 @@
       font-size: 0.9rem;
     }
 
-    footer a {
-      color: #fff;
-      font-weight: 700;
-    }
+    footer a { color: #fff; font-weight: 700; }
 
+    footer .email-link { color: #fff; }
+
+    /* ============ RESPONSIVE ============ */
     @media (max-width: 900px) {
-      .hero-grid,
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-
-      .steps {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .nav-links {
-        display: none;
-      }
+      .hero-grid, .two-col, .cards { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
     }
 
     @media (max-width: 600px) {
-      .cards,
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 3rem 0;
-      }
-
-      .section {
-        padding: 3rem 0;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
+      .steps { grid-template-columns: 1fr; }
+      .hero { padding: 3rem 0; }
+      .section { padding: 3rem 0; }
+      .hero-actions .btn, .hero-actions .email-link { width: 100%; text-align: center; }
+      .nav { justify-content: center; }
+      .nav-right { width: 100%; justify-content: center; }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- ============ HEADER ============ -->
   <header class="site-header">
     <div class="container nav">
       <a class="logo" href="#">
         <span class="logo-mark">H</span>
         <span>
-          هيرو رواج
-          <small>Hero Rawaj </small>
+          <span data-ar="هيرو رواج" data-en="Hero Rawaj">هيرو رواج</span>
+          <small data-ar="Hero Rawaj" data-en="هيرو رواج">Hero Rawaj</small>
         </span>
       </a>
 
       <nav class="nav-links">
-        <a href="#services">ماذا ننفذ؟</a>
-        <a href="#how">كيف تعمل؟</a>
-        <a href="#audience">للشركات</a>
-        <a href="#start">ابدأ</a>
+        <a href="#services" data-ar="ماذا ننفذ؟" data-en="What We Do">ماذا ننفذ؟</a>
+        <a href="#how" data-ar="كيف تعمل؟" data-en="How It Works">كيف تعمل؟</a>
+        <a href="#audience" data-ar="للشركات" data-en="For Business">للشركات</a>
+        <a href="#start" data-ar="ابدأ" data-en="Get Started">ابدأ</a>
       </nav>
 
-      <a class="btn btn-primary btn-small" href="https://t.me/Herocourses" target="_blank" rel="noopener">
-        اطلب تنفيذ مهمة
-      </a>
-      <a class="email-link" href="mailto:info@hero1.vip">
-        ✉ info@hero1.vip 
-      </a>
+      <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Language switch">
+          <button type="button" id="btn-ar" class="active" onclick="setLang('ar')">AR</button>
+          <button type="button" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
 
+        <a class="btn btn-primary btn-small" href="https://t.me/Herocourses" target="_blank" rel="noopener"
+           data-ar="اطلب تنفيذ مهمة" data-en="Request a Task">
+          اطلب تنفيذ مهمة
+        </a>
+
+        <a class="email-link" href="mailto:info@hero1.vip">✉ info@hero1.vip</a>
+      </div>
     </div>
   </header>
 
   <main>
 
-    <!-- Hero -->
+    <!-- ============ HERO ============ -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content">
-          <span class="badge">منصة المهام المصغرة</span>
+          <span class="badge" data-ar="منصة المهام المصغرة" data-en="Micro-Tasks Platform">منصة المهام المصغرة</span>
 
-          <h1>اختبر منتجك مع مستخدمين حقيقيين في الشرق الأوسط</h1>
+          <h1 data-ar="اختبر منتجك مع مستخدمين حقيقيين في الشرق الأوسط"
+              data-en="Test Your Product with Real Users in the Middle East">
+            اختبر منتجك مع مستخدمين حقيقيين في الشرق الأوسط
+          </h1>
 
-          <p class="lead">اختبارات حقيقية. نتائج موثقة. بدون تعقيد.</p>
+          <p class="lead"
+             data-ar="اختبارات حقيقية. نتائج موثقة. بدون تعقيد."
+             data-en="Real tests. Documented results. No complexity.">
+            اختبارات حقيقية. نتائج موثقة. بدون تعقيد.
+          </p>
 
-          <p>
+          <p data-ar="هل تريد معرفة كيف يتعامل المستخدمون الحقيقيون مع موقعك أو تطبيقك أو حملتك؟ تساعدك <strong>Hero Tasks</strong> على تنفيذ مهام قصيرة ومحددة بواسطة مستخدمين حقيقيين، والحصول على الإثباتات والنتائج التي تحتاجها لاتخاذ قرار أفضل."
+             data-en="Want to know how real users interact with your website, app, or campaign? <strong>Hero Tasks</strong> helps you run short, targeted tasks with real users and get the proof and results you need to make better decisions.">
             هل تريد معرفة كيف يتعامل المستخدمون الحقيقيون مع موقعك أو تطبيقك أو حملتك؟
             تساعدك <strong>Hero Tasks</strong> على تنفيذ مهام قصيرة ومحددة بواسطة مستخدمين حقيقيين،
             والحصول على الإثباتات والنتائج التي تحتاجها لاتخاذ قرار أفضل.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://t.me/Herocourses" target="_blank" rel="noopener">
+            <a class="btn btn-primary" href="https://t.me/Herocourses" target="_blank" rel="noopener"
+               data-ar="اطلب تنفيذ مهمة" data-en="Request a Task">
               اطلب تنفيذ مهمة
             </a>
+            <a class="email-link" href="mailto:info@hero1.vip">✉ info@hero1.vip</a>
+            <a class="btn btn-secondary" href="#how"
+               data-ar="كيف تعمل الخدمة؟" data-en="How does it work?">
+              كيف تعمل الخدمة؟
             </a>
-              <a class="email-link" href="mailto:info@hero1.vip">
-                ✉ info@hero1.vip 
-              </a>
-            <a class="btn btn-secondary" href="#how">كيف تعمل الخدمة؟</a>
           </div>
 
           <div class="hero-points">
-            <span>✓ إثباتات Screenshot</span>
-            <span>✓ استهداف حسب الدولة</span>
-            <span>✓ نتائج قابلة للمراجعة</span>
+            <span data-ar="✓ إثباتات Screenshot" data-en="✓ Screenshot proof">✓ إثباتات Screenshot</span>
+            <span data-ar="✓ استهداف حسب الدولة" data-en="✓ Country targeting">✓ استهداف حسب الدولة</span>
+            <span data-ar="✓ نتائج قابلة للمراجعة" data-en="✓ Reviewable results">✓ نتائج قابلة للمراجعة</span>
           </div>
         </div>
 
@@ -517,32 +538,44 @@
             <div class="mini-card">
               <span>1</span>
               <div>
-                <strong>أرسل المهمة</strong>
-                <p>حدد المطلوب، الدولة أو الفئة المستهدفة، عدد المشاركين، وطريقة إثبات التنفيذ.</p>
+                <strong data-ar="أرسل المهمة" data-en="Send the Task">أرسل المهمة</strong>
+                <p data-ar="حدد المطلوب، الدولة أو الفئة المستهدفة، عدد المشاركين، وطريقة إثبات التنفيذ."
+                   data-en="Define the request, country or target audience, number of participants, and proof method.">
+                  حدد المطلوب، الدولة أو الفئة المستهدفة، عدد المشاركين، وطريقة إثبات التنفيذ.
+                </p>
               </div>
             </div>
 
             <div class="mini-card">
               <span>2</span>
               <div>
-                <strong>نحدد المشاركين المناسبين</strong>
-                <p>نختار أعضاء وفق متطلبات المهمة، مثل الدولة أو نوع الجهاز أو شروط أخرى.</p>
+                <strong data-ar="نحدد المشاركين المناسبين" data-en="We Match Participants">نحدد المشاركين المناسبين</strong>
+                <p data-ar="نختار أعضاء وفق متطلبات المهمة، مثل الدولة أو نوع الجهاز أو شروط أخرى."
+                   data-en="We select members based on task requirements such as country, device type, or other conditions.">
+                  نختار أعضاء وفق متطلبات المهمة، مثل الدولة أو نوع الجهاز أو شروط أخرى.
+                </p>
               </div>
             </div>
 
             <div class="mini-card">
               <span>3</span>
               <div>
-                <strong>يبدأ التنفيذ</strong>
-                <p>يحصل كل مشارك على تعليمات واضحة وينفذ المهمة.</p>
+                <strong data-ar="يبدأ التنفيذ" data-en="Execution Begins">يبدأ التنفيذ</strong>
+                <p data-ar="يحصل كل مشارك على تعليمات واضحة وينفذ المهمة."
+                   data-en="Each participant receives clear instructions and completes the task.">
+                  يحصل كل مشارك على تعليمات واضحة وينفذ المهمة.
+                </p>
               </div>
             </div>
 
             <div class="mini-card">
               <span>4</span>
               <div>
-                <strong>تحصل على النتائج</strong>
-                <p>يتم جمع الإثباتات والنتائج المطلوبة وإتاحتها لك للمراجعة والتحليل.</p>
+                <strong data-ar="تحصل على النتائج" data-en="You Get the Results">تحصل على النتائج</strong>
+                <p data-ar="يتم جمع الإثباتات والنتائج المطلوبة وإتاحتها لك للمراجعة والتحليل."
+                   data-en="All required proof and results are collected and made available for review and analysis.">
+                  يتم جمع الإثباتات والنتائج المطلوبة وإتاحتها لك للمراجعة والتحليل.
+                </p>
               </div>
             </div>
           </div>
@@ -550,215 +583,295 @@
       </div>
     </section>
 
-    <!-- Services -->
+    <!-- ============ SERVICES ============ -->
     <section class="section" id="services">
       <div class="container">
         <div class="section-head">
-          <h2>ماذا يمكننا تنفيذ؟</h2>
-          <p>مهام قصيرة ومحددة بواسطة مستخدمين حقيقيين، مع إثباتات ونتائج موثقة.</p>
+          <h2 data-ar="ماذا يمكننا تنفيذ؟" data-en="What Can We Execute?">ماذا يمكننا تنفيذ؟</h2>
+          <p data-ar="مهام قصيرة ومحددة بواسطة مستخدمين حقيقيين، مع إثباتات ونتائج موثقة."
+             data-en="Short, targeted tasks by real users with documented proof and results.">
+            مهام قصيرة ومحددة بواسطة مستخدمين حقيقيين، مع إثباتات ونتائج موثقة.
+          </p>
         </div>
 
         <div class="cards">
           <article class="card">
-            <h3>اختبار المواقع والتطبيقات</h3>
+            <h3 data-ar="اختبار المواقع والتطبيقات" data-en="Website & App Testing">اختبار المواقع والتطبيقات</h3>
             <ul>
-              <li>فتح التطبيق وتنفيذ خطوات محددة</li>
-              <li>تجربة التسجيل أو الشراء</li>
-              <li>اختبار واجهة المستخدم</li>
-              <li>تنفيذ رحلة مستخدم كاملة</li>
-              <li>اكتشاف مشكلات الاستخدام</li>
-              <li>إرسال Screenshot أو إثبات التنفيذ</li>
+              <li data-ar="فتح التطبيق وتنفيذ خطوات محددة" data-en="Open the app and perform specific steps">فتح التطبيق وتنفيذ خطوات محددة</li>
+              <li data-ar="تجربة التسجيل أو الشراء" data-en="Test sign-up or purchase flow">تجربة التسجيل أو الشراء</li>
+              <li data-ar="اختبار واجهة المستخدم" data-en="Test the user interface">اختبار واجهة المستخدم</li>
+              <li data-ar="تنفيذ رحلة مستخدم كاملة" data-en="Run a complete user journey">تنفيذ رحلة مستخدم كاملة</li>
+              <li data-ar="اكتشاف مشكلات الاستخدام" data-en="Discover usability issues">اكتشاف مشكلات الاستخدام</li>
+              <li data-ar="إرسال Screenshot أو إثبات التنفيذ" data-en="Send a screenshot or execution proof">إرسال Screenshot أو إثبات التنفيذ</li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>أبحاث السوق</h3>
+            <h3 data-ar="أبحاث السوق" data-en="Market Research">أبحاث السوق</h3>
             <ul>
-              <li>منتج جديد</li>
-              <li>فكرة مشروع</li>
-              <li>تجربة مستخدم</li>
-              <li>إعلان أو منشور</li>
-              <li>صفحة هبوط</li>
-              <li>تجربة شراء</li>
+              <li data-ar="منتج جديد" data-en="New product">منتج جديد</li>
+              <li data-ar="فكرة مشروع" data-en="Business idea">فكرة مشروع</li>
+              <li data-ar="تجربة مستخدم" data-en="User experience">تجربة مستخدم</li>
+              <li data-ar="إعلان أو منشور" data-en="Ad or post">إعلان أو منشور</li>
+              <li data-ar="صفحة هبوط" data-en="Landing page">صفحة هبوط</li>
+              <li data-ar="تجربة شراء" data-en="Purchase experience">تجربة شراء</li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>التحقق من البيانات</h3>
+            <h3 data-ar="التحقق من البيانات" data-en="Data Verification">التحقق من البيانات</h3>
             <ul>
-              <li>التحقق من بيانات نشاط تجاري على Google Maps</li>
-              <li>مقارنة المعلومات الظاهرة</li>
-              <li>التأكد من وجود بيانات أو معلومات محددة</li>
-              <li>إرسال Screenshot كإثبات</li>
+              <li data-ar="التحقق من بيانات نشاط تجاري على Google Maps" data-en="Verify business data on Google Maps">التحقق من بيانات نشاط تجاري على Google Maps</li>
+              <li data-ar="مقارنة المعلومات الظاهرة" data-en="Compare displayed information">مقارنة المعلومات الظاهرة</li>
+              <li data-ar="التأكد من وجود بيانات أو معلومات محددة" data-en="Confirm the presence of specific data">التأكد من وجود بيانات أو معلومات محددة</li>
+              <li data-ar="إرسال Screenshot كإثبات" data-en="Send a screenshot as proof">إرسال Screenshot كإثبات</li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>اختبار الحملات والانتشار</h3>
+            <h3 data-ar="اختبار الحملات والانتشار" data-en="Campaign & Reach Testing">اختبار الحملات والانتشار</h3>
             <ul>
-              <li>فتح منشور</li>
-              <li>تنفيذ تفاعل محدد</li>
-              <li>اختبار وصول رسالة WhatsApp</li>
-              <li>تجربة رحلة مستخدم من إعلان إلى صفحة</li>
-              <li>التحقق من خطوات الحملة</li>
+              <li data-ar="فتح منشور" data-en="Open a post">فتح منشور</li>
+              <li data-ar="تنفيذ تفاعل محدد" data-en="Perform a specific interaction">تنفيذ تفاعل محدد</li>
+              <li data-ar="اختبار وصول رسالة WhatsApp" data-en="Test WhatsApp message delivery">اختبار وصول رسالة WhatsApp</li>
+              <li data-ar="تجربة رحلة مستخدم من إعلان إلى صفحة" data-en="Test a user journey from ad to page">تجربة رحلة مستخدم من إعلان إلى صفحة</li>
+              <li data-ar="التحقق من خطوات الحملة" data-en="Verify campaign steps">التحقق من خطوات الحملة</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- How it works -->
+    <!-- ============ HOW IT WORKS ============ -->
     <section class="section section-alt" id="how">
       <div class="container">
         <div class="section-head">
-          <h2>كيف تعمل الخدمة؟</h2>
-          <p>أربع خطوات واضحة من إرسال المهمة حتى استلام النتائج.</p>
+          <h2 data-ar="كيف تعمل الخدمة؟" data-en="How Does It Work?">كيف تعمل الخدمة؟</h2>
+          <p data-ar="أربع خطوات واضحة من إرسال المهمة حتى استلام النتائج."
+             data-en="Four clear steps from task submission to receiving results.">
+            أربع خطوات واضحة من إرسال المهمة حتى استلام النتائج.
+          </p>
         </div>
 
         <div class="steps">
           <div class="step">
             <div class="step-num">1</div>
-            <h3>أرسل المهمة</h3>
-            <p>حدد المطلوب، الدولة أو الفئة المستهدفة، عدد المشاركين، وطريقة إثبات التنفيذ.</p>
+            <h3 data-ar="أرسل المهمة" data-en="Send the Task">أرسل المهمة</h3>
+            <p data-ar="حدد المطلوب، الدولة أو الفئة المستهدفة، عدد المشاركين، وطريقة إثبات التنفيذ."
+               data-en="Define the request, country or target audience, number of participants, and proof method.">
+              حدد المطلوب، الدولة أو الفئة المستهدفة، عدد المشاركين، وطريقة إثبات التنفيذ.
+            </p>
           </div>
 
           <div class="step">
             <div class="step-num">2</div>
-            <h3>نحدد المشاركين المناسبين</h3>
-            <p>نختار أعضاء وفق متطلبات المهمة، مثل الدولة أو نوع الجهاز أو شروط أخرى.</p>
+            <h3 data-ar="نحدد المشاركين المناسبين" data-en="We Match Participants">نحدد المشاركين المناسبين</h3>
+            <p data-ar="نختار أعضاء وفق متطلبات المهمة، مثل الدولة أو نوع الجهاز أو شروط أخرى."
+               data-en="We select members based on task requirements such as country, device type, or other conditions.">
+              نختار أعضاء وفق متطلبات المهمة، مثل الدولة أو نوع الجهاز أو شروط أخرى.
+            </p>
           </div>
 
           <div class="step">
             <div class="step-num">3</div>
-            <h3>يبدأ التنفيذ</h3>
-            <p>يحصل كل مشارك على تعليمات واضحة وينفذ المهمة.</p>
+            <h3 data-ar="يبدأ التنفيذ" data-en="Execution Begins">يبدأ التنفيذ</h3>
+            <p data-ar="يحصل كل مشارك على تعليمات واضحة وينفذ المهمة."
+               data-en="Each participant receives clear instructions and completes the task.">
+              يحصل كل مشارك على تعليمات واضحة وينفذ المهمة.
+            </p>
           </div>
 
           <div class="step">
             <div class="step-num">4</div>
-            <h3>تحصل على النتائج</h3>
-            <p>يتم جمع الإثباتات والنتائج المطلوبة وإتاحتها لك للمراجعة والتحليل.</p>
+            <h3 data-ar="تحصل على النتائج" data-en="You Get the Results">تحصل على النتائج</h3>
+            <p data-ar="يتم جمع الإثباتات والنتائج المطلوبة وإتاحتها لك للمراجعة والتحليل."
+               data-en="All required proof and results are collected and made available for review and analysis.">
+              يتم جمع الإثباتات والنتائج المطلوبة وإتاحتها لك للمراجعة والتحليل.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Audience -->
+    <!-- ============ AUDIENCE ============ -->
     <section class="section" id="audience">
       <div class="container two-col">
         <div>
-          <h2>مناسب للشركات ووكالات التسويق</h2>
-          <p style="color: var(--muted); margin-top: 0.8rem;">
+          <h2 data-ar="مناسب للشركات ووكالات التسويق" data-en="Built for Companies & Marketing Agencies">
+            مناسب للشركات ووكالات التسويق
+          </h2>
+          <p style="color: var(--muted); margin-top: 0.8rem;"
+             data-ar="يمكن استخدام Hero Tasks لتنفيذ اختبارات صغيرة ومتكررة دون الحاجة إلى بناء فريق اختبار داخلي لكل حملة أو منتج."
+             data-en="Hero Tasks lets you run small, repeatable tests without building an internal testing team for every campaign or product.">
             يمكن استخدام Hero Tasks لتنفيذ اختبارات صغيرة ومتكررة دون الحاجة إلى بناء فريق اختبار داخلي
             لكل حملة أو منتج.
           </p>
 
-          <h3 style="margin-top: 2rem; margin-bottom: 0.6rem;">هل لديك مهمة تريد اختبارها؟</h3>
-          <p style="color: var(--muted); margin-bottom: 1.2rem;">
+          <h3 style="margin-top: 2rem; margin-bottom: 0.6rem;"
+              data-ar="هل لديك مهمة تريد اختبارها؟"
+              data-en="Have a task you want to test?">
+            هل لديك مهمة تريد اختبارها؟
+          </h3>
+          <p style="color: var(--muted); margin-bottom: 1.2rem;"
+             data-ar="ابدأ بمهمة صغيرة، واختبر فكرة أو صفحة أو تطبيق على عدد محدود من المستخدمين أولًا، ثم زد عدد المشاركين إذا كانت النتائج مفيدة."
+             data-en="Start small, test an idea, page, or app with a limited number of users, then scale up if the results are useful.">
             ابدأ بمهمة صغيرة، واختبر فكرة أو صفحة أو تطبيق على عدد محدود من المستخدمين أولًا،
             ثم زد عدد المشاركين إذا كانت النتائج مفيدة.
           </p>
 
-          <a class="btn btn-primary" href="https://t.me/Herocourses" target="_blank" rel="noopener">
-            اطلب تنفيذ مهمة
-          </a>
-          </a>
-              <a class="email-link" href="mailto:info@hero1.vip">
-                ✉ info@hero1.vip 
-              </a>
+          <div class="hero-actions" style="margin: 0;">
+            <a class="btn btn-primary" href="https://t.me/Herocourses" target="_blank" rel="noopener"
+               data-ar="اطلب تنفيذ مهمة" data-en="Request a Task">
+              اطلب تنفيذ مهمة
+            </a>
+            <a class="email-link" href="mailto:info@hero1.vip">✉ info@hero1.vip</a>
+          </div>
         </div>
 
         <div class="requirements-card">
-          <h3>ما الذي نحتاجه منك؟</h3>
+          <h3 data-ar="ما الذي نحتاجه منك؟" data-en="What We Need From You">ما الذي نحتاجه منك؟</h3>
 
           <ul class="check-list">
-            <li>وصف المهمة</li>
-            <li>الخطوات المطلوبة</li>
-            <li>الدولة أو الفئة المستهدفة</li>
-            <li>عدد المشاركين</li>
-            <li>طريقة إثبات التنفيذ</li>
-            <li>المدة المطلوبة</li>
-            <li>أي شروط خاصة بالمستخدم أو الجهاز</li>
+            <li data-ar="وصف المهمة" data-en="Task description">وصف المهمة</li>
+            <li data-ar="الخطوات المطلوبة" data-en="Required steps">الخطوات المطلوبة</li>
+            <li data-ar="الدولة أو الفئة المستهدفة" data-en="Country or target audience">الدولة أو الفئة المستهدفة</li>
+            <li data-ar="عدد المشاركين" data-en="Number of participants">عدد المشاركين</li>
+            <li data-ar="طريقة إثبات التنفيذ" data-en="Proof of execution method">طريقة إثبات التنفيذ</li>
+            <li data-ar="المدة المطلوبة" data-en="Required duration">المدة المطلوبة</li>
+            <li data-ar="أي شروط خاصة بالمستخدم أو الجهاز" data-en="Any user or device-specific conditions">أي شروط خاصة بالمستخدم أو الجهاز</li>
           </ul>
 
-          <p style="color: var(--muted); margin-bottom: 1.2rem;">
+          <p style="color: var(--muted); margin-bottom: 1.2rem;"
+             data-ar="نحن ننفذ المهمة كما تحددها، ونساعدك على تحويل المطلوب إلى تعليمات واضحة للمشاركين."
+             data-en="We execute the task exactly as you define it and help you turn requirements into clear instructions for participants.">
             نحن ننفذ المهمة كما تحددها، ونساعدك على تحويل المطلوب إلى تعليمات واضحة للمشاركين.
           </p>
 
-          <a class="btn btn-primary" href="https://t.me/Herocourses" target="_blank" rel="noopener">
-            اطلب تنفيذ مهمة
-          </a>
-          </a>
-              <a class="email-link" href="mailto:info@hero1.vip">
-                ✉ info@hero1.vip 
-              </a>
+          <div class="hero-actions" style="margin: 0;">
+            <a class="btn btn-primary" href="https://t.me/Herocourses" target="_blank" rel="noopener"
+               data-ar="اطلب تنفيذ مهمة" data-en="Request a Task">
+              اطلب تنفيذ مهمة
+            </a>
+            <a class="email-link" href="mailto:info@hero1.vip">✉ info@hero1.vip</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Start small -->
+    <!-- ============ START SMALL ============ -->
     <section class="section section-alt" id="start">
       <div class="container two-col">
         <div>
-          <h2>ابدأ بمهمة صغيرة</h2>
-          <p style="color: var(--muted); margin-top: 0.8rem;">
+          <h2 data-ar="ابدأ بمهمة صغيرة" data-en="Start with a Small Task">ابدأ بمهمة صغيرة</h2>
+          <p style="color: var(--muted); margin-top: 0.8rem;"
+             data-ar="لا تحتاج إلى البدء بحملة كبيرة. يمكنك اختبار فكرة أو صفحة أو تطبيق على عدد محدود من المستخدمين أولًا، ثم زيادة عدد المشاركين إذا كانت النتائج مفيدة."
+             data-en="No need to start with a big campaign. Test an idea, page, or app with a limited number of users first, then increase participants if results are useful.">
             لا تحتاج إلى البدء بحملة كبيرة. يمكنك اختبار فكرة أو صفحة أو تطبيق على عدد محدود من
             المستخدمين أولًا، ثم زيادة عدد المشاركين إذا كانت النتائج مفيدة.
           </p>
         </div>
 
         <div class="requirements-card">
-          <h3>جاهز للاختبار؟</h3>
-          <p style="color: var(--muted); margin-bottom: 1.2rem;">
+          <h3 data-ar="جاهز للاختبار؟" data-en="Ready to Test?">جاهز للاختبار؟</h3>
+          <p style="color: var(--muted); margin-bottom: 1.2rem;"
+             data-ar="أرسل تفاصيل المهمة وسنساعدك على تحويلها إلى تعليمات واضحة لمستخدمين حقيقيين."
+             data-en="Send us the task details and we'll help turn them into clear instructions for real users.">
             أرسل تفاصيل المهمة وسنساعدك على تحويلها إلى تعليمات واضحة لمستخدمين حقيقيين.
           </p>
 
-          <a class="btn btn-primary" href="https://t.me/Herocourses" target="_blank" rel="noopener">
-            اطلب تنفيذ مهمة
-          </a>
-          </a>
-              <a class="email-link" href="mailto:info@hero1.vip">
-                ✉ info@hero1.vip 
-              </a>
+          <div class="hero-actions" style="margin: 0;">
+            <a class="btn btn-primary" href="https://t.me/Herocourses" target="_blank" rel="noopener"
+               data-ar="اطلب تنفيذ مهمة" data-en="Request a Task">
+              اطلب تنفيذ مهمة
+            </a>
+            <a class="email-link" href="mailto:info@hero1.vip">✉ info@hero1.vip</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Final CTA -->
+    <!-- ============ FINAL CTA ============ -->
     <section class="cta">
       <div class="container">
-        <h2>اختبر منتجك مع مستخدمين حقيقيين</h2>
-        <p>
+        <h2 data-ar="اختبر منتجك مع مستخدمين حقيقيين" data-en="Test Your Product with Real Users">
+          اختبر منتجك مع مستخدمين حقيقيين
+        </h2>
+        <p data-ar="اختبارات حقيقية. نتائج موثقة. بدون تعقيد. ابدأ مهمتك الأولى مع Hero Tasks الآن."
+           data-en="Real tests. Documented results. No complexity. Start your first task with Hero Tasks today.">
           اختبارات حقيقية. نتائج موثقة. بدون تعقيد.
           ابدأ مهمتك الأولى مع Hero Tasks الآن.
         </p>
 
-        <a class="btn" href="https://t.me/Herocourses" target="_blank" rel="noopener">
-          اطلب تنفيذ مهمة
-        </a>
-        </a>
-              <a class="email-link" href="mailto:info@hero1.vip">
-                ✉ info@hero1.vip 
-              </a>
+        <div class="cta-actions">
+          <a class="btn" href="https://t.me/Herocourses" target="_blank" rel="noopener"
+             data-ar="اطلب تنفيذ مهمة" data-en="Request a Task">
+            اطلب تنفيذ مهمة
+          </a>
+          <a class="email-link" href="mailto:info@hero1.vip">✉ info@hero1.vip</a>
+        </div>
       </div>
     </section>
 
   </main>
 
+  <!-- ============ FOOTER ============ -->
   <footer>
     <div class="container">
       <p>
-        © <span id="year"></span> هيرو رواج — Hero Rawaj .
-
-              <a class="email-link" href="#">
-                ✉ info@hero1.vip 
-              </a>
+        © <span id="year"></span>
+        <span data-ar="هيرو رواج — Hero Rawaj" data-en="Hero Rawaj — هيرو رواج">هيرو رواج — Hero Rawaj</span>.
+        &nbsp;
+        <a class="email-link" href="mailto:info@hero1.vip">✉ info@hero1.vip</a>
       </p>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    function setLang(lang) {
+      const html = document.documentElement;
+      const btnAr = document.getElementById("btn-ar");
+      const btnEn = document.getElementById("btn-en");
+
+      // Set direction and language
+      if (lang === "en") {
+        html.setAttribute("lang", "en");
+        html.setAttribute("dir", "ltr");
+        btnEn.classList.add("active");
+        btnAr.classList.remove("active");
+      } else {
+        html.setAttribute("lang", "ar");
+        html.setAttribute("dir", "rtl");
+        btnAr.classList.add("active");
+        btnEn.classList.remove("active");
+      }
+
+      // Swap all translatable elements
+      document.querySelectorAll("[data-ar][data-en]").forEach(el => {
+        const value = el.getAttribute("data-" + lang);
+        if (value !== null) {
+          // Preserve inner HTML for elements that contain markup like <strong>
+          el.innerHTML = value;
+        }
+      });
+
+      // Update document title
+      document.title = lang === "en"
+        ? "Hero Rawaj | Micro-Tasks Platform"
+        : "هيرو رواج | منصة المهام المصغرة";
+
+      // Save preference
+      try { localStorage.setItem("hero_lang", lang); } catch (e) {}
+    }
+
+    // Load saved preference on page load
+    (function () {
+      let saved = "ar";
+      try { saved = localStorage.getItem("hero_lang") || "ar"; } catch (e) {}
+      setLang(saved);
+    })();
   </script>
 
 </body>
